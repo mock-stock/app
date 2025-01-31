@@ -4,25 +4,28 @@ import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function HomeScreen() {
   return (
-    <WebView
-      style={styles.container}
-      source={{ uri: 'https://dev.mock-stock.shop' }}
-      originWhitelist={['*']} // 모든 도메인 허용
-      javaScriptEnabled={true} // JavaScript 실행 허용
-      domStorageEnabled={true} // DOM Storage 허용
-      startInLoadingState={true} // 로딩 상태 표시
-      onError={(syntheticEvent) => {
-        const { nativeEvent } = syntheticEvent;
-        console.error('WebView Error:', nativeEvent);
-      }}
-      onHttpError={(syntheticEvent) => {
-        const { nativeEvent } = syntheticEvent;
-        console.error('HTTP Error:', nativeEvent);
-      }}
-    />
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
+      <WebView
+        style={styles.container}
+        source={{ uri: 'https://dev.mock-stock.shop' }}
+        originWhitelist={['*']} // 모든 도메인 허용
+        javaScriptEnabled={true} // JavaScript 실행 허용
+        domStorageEnabled={true} // DOM Storage 허용
+        startInLoadingState={true} // 로딩 상태 표시
+        onError={(syntheticEvent) => {
+          const { nativeEvent } = syntheticEvent;
+          console.error('WebView Error:', nativeEvent);
+        }}
+        onHttpError={(syntheticEvent) => {
+          const { nativeEvent } = syntheticEvent;
+          console.error('HTTP Error:', nativeEvent);
+        }}
+      />
+    </SafeAreaView>
   );
   // return (
   //   <ParallaxScrollView
@@ -79,7 +82,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 0,
+    // paddingTop: 30,
   },
   titleContainer: {
     flexDirection: 'row',
