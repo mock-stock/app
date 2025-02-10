@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">mockStockApp</string>
+        <string name="kakao_app_key">9b299546c08960830e5f067d630b30ac</string> <!-- 추가할 코드 -->
 </resources>
