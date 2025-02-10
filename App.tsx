@@ -18,8 +18,8 @@ function App(): React.JSX.Element {
   const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} />
+      <Stack.Navigator initialRouteName="WebviewScreen">
+        <Stack.Screen name="Test" component={Home} />
         <Stack.Screen
           name="WebviewScreen"
           component={WebviewScreen}

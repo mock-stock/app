@@ -5,9 +5,13 @@ import {Button, StatusBar, Text, View} from 'react-native';
 function Home({navigation}: {navigation: NativeStackNavigationProp<any>}) {
   return (
     <View>
-      <Text>Home</Text>
+      {/* <Button
+        title="실제 웹뷰로"
+        // 다른 페이지로 이동
+        onPress={() => navigation.navigate('WebviewScreen', 'test')}
+      /> */}
       <Button
-        title="Go to Profile"
+        title="테스트 화면으로"
         // 다른 페이지로 이동
         onPress={() => navigation.navigate('WebviewScreen')}
       />

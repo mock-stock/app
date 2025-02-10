@@ -5,10 +5,9 @@
  * @format
  */
 
-import {ParamListBase, RouteProp, useRoute} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import React, {useEffect, useRef, useState} from 'react';
-import {Alert, SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import React, {useRef} from 'react';
+import {SafeAreaView, StyleSheet} from 'react-native';
 
 import {WebView} from 'react-native-webview';
 
@@ -32,19 +31,13 @@ export const WebviewScreen = ({
     }
   };
 
-  const sendLoginAckToWebView = () => {
-    if (webviewRef.current) {
-      webviewRef.current.postMessage(JSON.stringify({action: 'LOGIN_ACK'}));
-    }
-  };
-
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <WebView
         ref={webviewRef}
         style={styles.container}
-        // source={{uri: 'https://dev.mock-stock.shop'}}
-        source={{uri: 'http://172.30.1.62:5500/api-check.html'}}
+        source={{uri: 'https://dev.mock-stock.shop'}}
+        // source={{uri: 'http://172.30.1.62:5500/api-check.html'}}
         originWhitelist={['*']} // 모든 도메인 허용
         javaScriptEnabled={true} // JavaScript 실행 허용
         domStorageEnabled={true} // DOM Storage 허용
