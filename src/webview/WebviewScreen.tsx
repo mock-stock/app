@@ -25,7 +25,6 @@ export const WebviewScreen = ({
 
       if (data.action === 'LOGIN') {
         navigation.navigate('Login', {webviewRef: webviewRef}); // 로그인 화면으로 이동
-      } else if (data.action === 'LOGIN_SUCCESS') {
       }
     } catch (error) {
       console.error('Error parsing WebView message:', error);
