@@ -28,7 +28,7 @@ export const SigninSectionScreen = ({
             webviewRef.current.postMessage(
               JSON.stringify({
                 action: 'LOGIN_SUCCESS',
-                tokenInfo: result,
+                kakaoAccessToken: result.accessToken,
               }),
             );
             navigation.goBack();
