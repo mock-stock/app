@@ -1,38 +1,22 @@
-import React, {useEffect} from 'react';
-import {
-  Alert,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
-
-import {useState} from 'react';
+import React from 'react';
+import {Pressable, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {login} from '@react-native-seoul/kakao-login';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {useRoute} from '@react-navigation/native';
+import {RouteProp} from '@react-navigation/native';
 
 export const SigninSectionScreen = ({
   navigation,
+  route,
 }: {
   navigation: NativeStackNavigationProp<any>;
+  route: RouteProp<any>;
 }) => {
-  const [result, setResult] = useState<string>('');
-  const route = useRoute();
-
-  const webviewRef = route.params;
-  useEffect(() => {
-    if (route.params?.webviewRef) {
-      Alert.alert(route.params?.webviewRef);
-      setResult(route.params?.webviewRef);
-    }
-  }, [route.params]);
+  // const route = useRoute();
+  const webviewRef = route.params?.webviewRef;
   return (
     <View style={styles.container}>
       <View style={styles.resultContainer}>
         <ScrollView>
-          <Text>{result}</Text>
           <View style={{height: 100}} />
         </ScrollView>
       </View>
@@ -41,11 +25,10 @@ export const SigninSectionScreen = ({
         onPress={async () => {
           try {
             const result = await login();
-            setResult(JSON.stringify(result));
             webviewRef.current.postMessage(
               JSON.stringify({
                 action: 'LOGIN_SUCCESS',
-                token: result.accessToken,
+                tokenInfo: result,
               }),
             );
             navigation.goBack();

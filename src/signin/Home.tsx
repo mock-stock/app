@@ -13,7 +13,7 @@ function Home({navigation}: {navigation: NativeStackNavigationProp<any>}) {
       <Button
         title="테스트 화면으로"
         // 다른 페이지로 이동
-        onPress={() => navigation.navigate('WebviewScreen')}
+        onPress={() => navigation.replace('WebviewScreen')}
       />
       <StatusBar style="auto" />
     </View>
