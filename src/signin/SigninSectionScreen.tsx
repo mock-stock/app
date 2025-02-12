@@ -27,7 +27,7 @@ export const SigninSectionScreen = ({
             const result = await login();
             webviewRef.current.postMessage(
               JSON.stringify({
-                action: 'LOGIN_SUCCESS',
+                action: 'KAKAO_LOGIN_SUCCESS',
                 kakaoAccessToken: result.accessToken,
               }),
             );
