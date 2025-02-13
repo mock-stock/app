@@ -36,8 +36,8 @@ export const WebviewScreen = ({
       <WebView
         ref={webviewRef}
         style={styles.container}
-        source={{uri: 'https://dev.mock-stock.shop'}}
-        // source={{uri: url}}
+        // source={{uri: 'https://dev.mock-stock.shop'}}
+        source={{uri: '10.31.111.105:5500/api-check.html'}}
         originWhitelist={['*']} // 모든 도메인 허용
         javaScriptEnabled={true} // JavaScript 실행 허용
         domStorageEnabled={true} // DOM Storage 허용
