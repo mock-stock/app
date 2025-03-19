@@ -36,8 +36,11 @@ export const WebviewScreen = ({
       <WebView
         ref={webviewRef}
         style={styles.container}
-        // source={{uri: 'https://dev.mock-stock.shop'}}
-        source={{uri: '10.31.111.105:5500/api-check.html'}}
+        source={{uri: 'https://mock-stock-frontend.vercel.app'}}
+        // source={{uri: 'https://dev-mock-stock-frontend.vercel.app'}}
+        // source={{uri: 'http://10.31.111.105:5500/api-check.html'}}
+        // source={{uri: 'http://172.30.1.54:5500/api-check.html'}}
+        // source={{uri: 'http://172.30.1.82:3000'}}
         originWhitelist={['*']} // 모든 도메인 허용
         javaScriptEnabled={true} // JavaScript 실행 허용
         domStorageEnabled={true} // DOM Storage 허용
